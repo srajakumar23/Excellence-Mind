@@ -4,8 +4,8 @@
   "private": true,
   "description": "School web dashboard for Excellent Mind: tablets sync each child's brainwave results here.",
   "type": "module",
-  "engines": {
-    "node": ">=22.13"
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.0"
   },
   "scripts": {
     "start": "node server.mjs"
