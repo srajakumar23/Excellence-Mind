@@ -59,15 +59,12 @@ function getConfig() {
     }
   }
 
+  const adminPassword = process.env.ADMIN_PASSWORD || process.env.ADMIN_PASS || fileCfg?.adminPassword || '';
   cachedConfig = {
     schoolName: process.env.SCHOOL_NAME || fileCfg?.schoolName || 'My School',
     schoolKey: process.env.SCHOOL_KEY || fileCfg?.schoolKey || '',
-    adminPassword: process.env.ADMIN_PASSWORD || fileCfg?.adminPassword || '',
-    sessionSecret:
-      process.env.SESSION_SECRET ||
-      process.env.ADMIN_PASSWORD ||
-      fileCfg?.adminPassword ||
-      '',
+    adminPassword,
+    sessionSecret: process.env.SESSION_SECRET || adminPassword,
   };
   return cachedConfig;
 }
